@@ -1,0 +1,11 @@
+class User < ApplicationRecord
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth['provider']
+      user.uid = auth['uid']
+      if auth['info']
+        user.role = auth['info']['name'].downcase.strip.gsub(' ', '-')
+      end
+    end
+  end
+end
