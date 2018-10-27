@@ -1,5 +1,5 @@
-<% if current_user %>
-  Welcome
+<% if @user %>
+  <%= link_to 'Click Here to sign into the Console', @login_uri %>
 <% else %>
   <a href="/auth/amazon" id="LoginWithAmazon">
     <img border="0"

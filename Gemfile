@@ -62,9 +62,17 @@ group :production do
   gem 'pg'
 end
 
+# ouath + login w/ amazon
 gem 'omniauth'
 gem 'omniauth-amazon'
+
+# haml > erb
 gem 'haml'
+
+# aws
+gem 'aws-sdk-rails'
+gem 'aws-sdk-iam'
+gem 'aws-sdk-lambda'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

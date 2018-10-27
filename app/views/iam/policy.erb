@@ -1,0 +1,67 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DojoPolicy0",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:TagResource",
+                "lambda:ListVersionsByFunction",
+                "logs:DescribeLogStreams",
+                "lambda:InvokeAsync",
+                "lambda:GetFunctionConfiguration",
+                "lambda:UntagResource",
+                "lambda:PutFunctionConcurrency",
+                "lambda:EnableReplication",
+                "iam:PassRole",
+                "lambda:ListTags",
+                "iam:ListAttachedRolePolicies",
+                "logs:GetLogEvents",
+                "lambda:DeleteFunction",
+                "logs:FilterLogEvents",
+                "iam:ListRolePolicies",
+                "lambda:GetAlias",
+                "iam:GetRole",
+                "lambda:InvokeFunction",
+                "lambda:GetFunction",
+                "lambda:ListAliases",
+                "lambda:UpdateFunctionConfiguration",
+                "lambda:UpdateAlias",
+                "lambda:UpdateFunctionCode",
+                "lambda:AddPermission",
+                "lambda:DeleteAlias",
+                "lambda:PublishVersion",
+                "lambda:DeleteFunctionConcurrency",
+                "iam:GetRolePolicy",
+                "lambda:RemovePermission",
+                "lambda:GetPolicy",
+                "lambda:CreateAlias"
+            ],
+            "Resource": [
+                "arn:aws:iam::051946164308:role/service-role/dojo-lambda-role",
+                "arn:aws:logs:us-east-1:051946164308:log-group:aws/lambda/<%= @function_name %>",
+                "arn:aws:logs:*:*:log-group:*:*:*",
+                "arn:aws:lambda:us-east-1:051946164308:function:<%= @function_name %>"
+            ]
+        },
+        {
+            "Sid": "DojoPolicy1",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetPolicyVersion",
+                "lambda:UpdateEventSourceMapping",
+                "iam:GetPolicy",
+                "cloudwatch:GetMetricData",
+                "lambda:GetEventSourceMapping",
+                "kms:ListAliases",
+                "lambda:ListEventSourceMappings",
+                "cloudformation:DescribeStackResources",
+                "iam:ListRoles",
+                "logs:TestMetricFilter",
+                "lambda:CreateEventSourceMapping",
+                "lambda:DeleteEventSourceMapping"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
