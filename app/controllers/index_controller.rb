@@ -28,8 +28,9 @@ class IndexController < ApplicationController
 
         issuer_param = "&Issuer=#{CGI.escape('https://alexa.seattlecoderdojo.org')}"
         destination_param = "&Destination=#{CGI.escape(console_url)}"
+        duration_param = "&SessionDuration=28800"
 
-        @login_uri = "#{signin_url}?Action=login#{signin_token_param}#{issuer_param}#{destination_param}"
+        @login_uri = "#{signin_url}?Action=login#{signin_token_param}#{issuer_param}#{destination_param}#{duration_param}"
       rescue Aws::STS::Errors::AccessDenied => e
         sleep 5
         retry if (retries += 1) < 3
