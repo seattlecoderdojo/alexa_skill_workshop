@@ -30,10 +30,14 @@ class IndexController < ApplicationController
         destination_param = "&Destination=#{CGI.escape(console_url)}"
 
         @login_uri = "#{signin_url}?Action=login#{signin_token_param}#{issuer_param}#{destination_param}"
-      rescue Aws::STS::Errors::AccessDenied
-        sleep 2
+      rescue Aws::STS::Errors::AccessDenied => e
+        sleep 5
         retry if (retries += 1) < 3
+
+        raise e
       end
+
+
     end
 
   end

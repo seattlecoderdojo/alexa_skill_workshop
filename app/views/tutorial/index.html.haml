@@ -1,9 +1,94 @@
 %h1 Seattle CoderDojo Alexa Skill Workshop
 
 %p
-  Last week, we created an Alexa skill using the Alexa Skills Kit.
+  Last week, we created an Alexa skill using the Alexa Skills Kit. That was
+  awesome, but we didn't actually write any code!
+
+%p
+  This week, we'll be creating a skill and connecting it to code <em>we</em>
+  have written.
 
 %h2 Quick Links
 %ul
   %li <a href="https://developer.amazon.com/alexa/console/ask">Alexa Skills Kit</a>
   %li <a href="http://learn.amazonfutureengineer.com/alexa/fact-skill/">Last Week's Tutorial</a>
+
+%h2 1. Set up a new skill
+
+%h3 Step 1
+%p
+  Go to the <a href="https://developer.amazon.com/alexa/console/ask">Alexa
+  Skills Kit</a> and click Create Skill.
+
+%h3 Step 2
+%p
+  Enter a name for your skill. This can be anything you want, but make it
+  meaningful for what you want your skill to do. If you don't know what you
+  want your skill name to be, just put something fun.
+%p
+  Finally, click on <em>Create Skill</em>.
+
+%h3 Step 3
+%p
+  On the <em>Choose a template</em> page, select <strong>Fact Skill</strong>.
+%p
+  <em>But wait, we did a fact skill LAST week!</em> you might be thinking...
+  and you're right! However, we're just going to use this as a starting pont,
+  so don't worry.
+%p 
+  Finally, click on <em>Choose</em>.
+
+%h2 2. Set up your code
+
+%h3 Step 1
+%p
+  Go to the <a href="/">CoderDojo App Portal</a>, then click <em>Login with
+  Amazon</em>. This will prompt you for an Amazon account. Simply provide the
+  same login you used for the Alexa Skills Portal.
+
+%h3 Step 2
+%p
+  After you log in, you should be back to where you started. Now, sign into the
+  console with the provided link. This will take you to your <strong>lambda
+  function</strong>, which is the code that will run when your Alexa skill is
+  called.
+
+%h3 Step 3
+%p
+  Add an Alexa Skills Kit trigger for this function. Disable <em>Skill ID
+  Verification</em>, then click <em>Add</em>.
+
+%p
+  Finally, click <em>Save</em> in the top right hand corner. Your code can now
+  be run from Alexa!
+
+%h2 3. Connect your Skill to your Code
+
+%h3 Step 1
+%p
+  Copy the ARN from your lambda function.
+
+%h3 Step 2
+%p
+  Under <em>Endpoint</em>, paste your ARN into the <em>Default Region</em> field.
+  Be sure to click <em>Save Endpoints</em> once you do this.
+
+%h2 4. Test your skill!
+
+%h3 Step 1
+%p
+  If you'd like, change the <em>Skill Invocation Name</em>. This is how we'll
+  interact with the code we write.
+%p
+  After you do this, click <em>Save Model</em>, <strong>then</strong> click
+  <em>Bulid Model</em>. Wait for your Model to finish building, then go to the
+  next step.
+
+%h3 Step 2
+%p
+  Go to the <em>Test</em> tab of the Alexa developer console, and enable
+  testing for this skill.
+
+%p
+  Now, invoke your skill by entering (or saying) open with your invocation
+  name. Boom, your code is happening!
